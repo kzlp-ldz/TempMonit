@@ -21,7 +21,7 @@ namespace TempMonit
     public partial class MainWindow : Window
     {
         private List<string> result = new List<string>();
-        private string[] date = new string[10];
+        private string[] date = new string[5];
         public MainWindow()
         {
             InitializeComponent();
@@ -52,6 +52,22 @@ namespace TempMonit
             if (timeCount != 0)
             {
                 tb_otchet.Text = $"Порог минимальной температуры превышен на {timeCount} минут";
+                DateTime ndate = new DateTime(int.Parse(date[2]), int.Parse(date[1]), int.Parse(date[0]),
+                    int.Parse(date[3]), int.Parse(date[4]), 0);
+                for (int i = 0; i < temp.Length; i++)
+                {
+                    
+                    if (int.Parse(temp[i]) > int.Parse(maxtemp))
+                    {
+                        result.Add($"{ndate}  {temp[i]}  {maxtemp}  {int.Parse(temp[i]) - int.Parse(maxtemp)}");
+                    }
+                    else if (int.Parse(temp[i]) < int.Parse(mintemp))
+                    {
+                        result.Add($"{ndate}  {temp[i]}  {mintemp}  {int.Parse(temp[i]) - int.Parse(mintemp)}");
+                    }
+                    ndate = ndate.AddMinutes(10);
+                }
+                tb_narushen.Text = string.Join(Environment.NewLine, result);
             }
             else
                 tb_otchet.Text = "Все меры хранения соблюдены";
