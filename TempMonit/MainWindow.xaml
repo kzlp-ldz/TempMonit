@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TempMonit"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="920">
     <Grid>
         <Label Content="Вид рыбы" HorizontalAlignment="Left" Height="37" Margin="10,19,0,0" VerticalAlignment="Top" Width="68"/>
         <TextBox x:Name="tb_fishName" HorizontalAlignment="Left" Height="37" Margin="86,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124"/>
@@ -20,10 +20,10 @@
         <Label Content="Дата" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tb_date" HorizontalAlignment="Left" Height="35" Margin="86,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Температура" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_temp" HorizontalAlignment="Left" Height="26" Margin="106,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="313"/>
-        <TextBox x:Name="tb_narushen" HorizontalAlignment="Left" Height="247" Margin="459,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
-        <TextBox x:Name="tb_otchet" HorizontalAlignment="Left" Height="28" Margin="459,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="323"/>
-        <Label Content="Отчет" HorizontalAlignment="Left" Height="25" Margin="459,34,0,0" VerticalAlignment="Top" Width="160"/>
+        <TextBox x:Name="tb_temp" HorizontalAlignment="Left" Height="26" Margin="106,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="387"/>
+        <TextBox x:Name="tb_narushen" HorizontalAlignment="Left" Height="247" Margin="528,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"/>
+        <TextBox x:Name="tb_otchet" HorizontalAlignment="Left" Height="28" Margin="528,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="374"/>
+        <Label Content="Отчет" HorizontalAlignment="Left" Height="25" Margin="528,34,0,0" VerticalAlignment="Top" Width="160"/>
         <Button x:Name="btn_load" Content="Загрузить" HorizontalAlignment="Left" Height="32" Margin="62,292,0,0" VerticalAlignment="Top" Width="105"/>
         <Button x:Name="btn_start" Content="Вывести" HorizontalAlignment="Left" Height="32" Margin="225,292,0,0" VerticalAlignment="Top" Width="127" Click="btn_start_Click"/>
 

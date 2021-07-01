@@ -22,7 +22,6 @@ namespace TempMonit
     {
         private List<string> result = new List<string>();
         private string[] date = new string[10];
-        private string[] temp = new string[54];
         public MainWindow()
         {
             InitializeComponent();
@@ -30,13 +29,32 @@ namespace TempMonit
 
         private void btn_start_Click(object sender, RoutedEventArgs e)
         {
-            int maxtemp = int.Parse(tb_maxTemp.Text);
-            int maxtime = int.Parse(tb_maxTime.Text);
-            int mintemp = int.Parse(tb_minTemp.Text);
-            int mintime = int.Parse(tb_minTime.Text);
+            var maxtemp = tb_maxTemp.Text;
+            var maxtime = tb_maxTime.Text;
+            var mintemp = tb_minTemp.Text;
+            var mintime = tb_minTime.Text;
             char[] separators = new char[] { ' ', '.', ':'};
             date = tb_date.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-            temp = tb_temp.Text.Split(' ');
+
+            string[] temp = tb_temp.Text.Split(' '); 
+            int timeCount = 0;
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if ((maxtemp != "") && (int.Parse(temp[i]) > int.Parse(maxtemp)))
+                {
+                    timeCount += 10;
+                }
+                else if ((mintemp != "") && (int.Parse(temp[i]) < int.Parse(mintemp)))
+                {
+                    timeCount += 10;
+                }
+            }
+            if (timeCount != 0)
+            {
+                tb_otchet.Text = $"Порог минимальной температуры превышен на {timeCount} минут";
+            }
+            else
+                tb_otchet.Text = "Все меры хранения соблюдены";
         }
     }
 }
